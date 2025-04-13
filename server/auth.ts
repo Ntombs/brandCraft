@@ -51,14 +51,19 @@ export function setupAuth(app: Express) {
         return done(null, false);
       }
       
-      // Special handling for admin user with pre-hashed password
-      if (username === "admin" && password === "admin123") {
-        return done(null, user);
-      } else if (!(await comparePasswords(password, user.password))) {
+      if (username === "admin") {
+        // Special handling for admin user
+        if (password === "admin123") {
+          return done(null, user);
+        }
         return done(null, false);
-      } else {
-        return done(null, user);
       }
+      
+      // Regular user password check
+      if (!(await comparePasswords(password, user.password))) {
+        return done(null, false);
+      }
+      return done(null, user);
     }),
   );
 
