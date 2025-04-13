@@ -8,10 +8,25 @@ interface ProjectScopeProps {
 }
 
 export default function ProjectScope({ project }: ProjectScopeProps) {
-  // In a real app, the scope would be generated from the onboarding data
-  // Here we'll show a sample scope based on the project data
-  
-  const hasScopeData = project.scope && Object.keys(project.scope).length > 0;
+  const hasScopeData = project.services && (
+    project.services.marketing?.length > 0 ||
+    project.services.design?.length > 0 ||
+    project.services.business?.length > 0
+  );
+
+  const serviceCategories = {
+    marketing: "Marketing & Promotion Services",
+    design: "Corporate Identity & Branding Design",
+    business: "Essential Business Setup & Compliance"
+  };
+
+  const formatDate = (date: string) => {
+    return new Date(date).toLocaleDateString('en-ZA', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  };
   
   return (
     <Card>
@@ -29,11 +44,53 @@ export default function ProjectScope({ project }: ProjectScopeProps) {
         </div>
         
         {hasScopeData ? (
-          <div>
-            {/* Render the actual scope document based on project.scope data */}
+          <div className="space-y-8">
             <div className="prose max-w-none">
-              {/* This would be populated from the project.scope in a real app */}
-              <p>The scope content would be displayed here.</p>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-medium mb-4">Project Timeline</h3>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <p className="text-sm text-gray-500">Start Date</p>
+                      <p className="font-medium">{formatDate(project.startDate)}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500">Deadline</p>
+                      <p className="font-medium">{formatDate(project.deadline)}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-medium mb-4">Selected Services</h3>
+                  {Object.entries(serviceCategories).map(([category, title]) => {
+                    const services = project.services[category];
+                    if (!services || services.length === 0) return null;
+
+                    return (
+                      <div key={category} className="mb-6">
+                        <h4 className="text-lg font-medium mb-3">{title}</h4>
+                        <ul className="list-disc list-inside space-y-2">
+                          {services.map(service => (
+                            <li key={service} className="text-gray-600">
+                              {service.split('_').map(word => 
+                                word.charAt(0).toUpperCase() + word.slice(1)
+                              ).join(' ')}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {project.description && (
+                  <div>
+                    <h3 className="text-xl font-medium mb-4">Project Description</h3>
+                    <p className="text-gray-600">{project.description}</p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         ) : (
