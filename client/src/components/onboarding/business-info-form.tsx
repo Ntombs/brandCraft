@@ -139,6 +139,24 @@ export default function BusinessInfoForm({ data, updateFormData }: BusinessInfoF
                 </div>
               </RadioGroup>
             </div>
+
+            <div>
+              <Label htmlFor="bbbeeLevel" className="block text-sm font-medium mb-2">
+                BBBEE Status Level (if applicable)
+              </Label>
+              <RadioGroup
+                value={formValues.bbbeeLevel}
+                onValueChange={(value) => handleChange("bbbeeLevel", value)}
+                className="grid grid-cols-1 md:grid-cols-4 gap-4"
+              >
+                {[1,2,3,4,5,6,7,8].map((level) => (
+                  <div key={level} className="flex items-center space-x-3 border border-gray-300 rounded-md p-3 hover:bg-gray-50 cursor-pointer">
+                    <RadioGroupItem value={level.toString()} id={`level-${level}`} />
+                    <Label htmlFor={`level-${level}`} className="cursor-pointer">Level {level}</Label>
+                  </div>
+                ))}
+              </RadioGroup>
+            </div>
           </div>
         </form>
 
