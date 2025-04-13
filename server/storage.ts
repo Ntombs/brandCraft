@@ -73,16 +73,20 @@ export class MemStorage implements IStorage {
       checkPeriod: 86400000 // 24 hours
     });
     
-    // Create admin user
-    this.createUser({
+    // Create admin user with already hashed password
+    // The password "admin123" was hashed with the same algorithm in auth.ts
+    const id = this.userIdCounter++;
+    const adminUser: User = {
+      id,
       username: "admin",
-      password: "admin123", // In a real app, this would be hashed
+      password: "c67fd61e6c3d725bb48035c0f43b65525f9e3a953a91a41a64fd83b6d090f7bfa96ce993f9cce7acedd3ca1a5759ca3c0e6ccda1ddaef36dd427c5ea34323ee2.59146f5bb17f1f7c", // hashed "admin123"
       email: "admin@example.com",
       firstName: "Admin",
       lastName: "User",
       companyName: "Studio Platform",
       role: "admin"
-    });
+    };
+    this.users.set(id, adminUser);
   }
 
   // User methods

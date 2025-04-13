@@ -78,22 +78,21 @@ export default function Sidebar() {
         <ul>
           {navItems.map((item) => (
             <li key={item.path} className="mb-1 px-2">
-              <Link href={item.path}>
-                <a 
-                  className={`flex items-center px-4 py-2 rounded-lg transition-all ${
-                    location === item.path
-                      ? "bg-gray-800 text-white"
-                      : "text-gray-300 hover:bg-gray-800 hover:text-white"
-                  }`}
-                >
-                  <span className="mr-3">{item.icon}</span>
-                  {!collapsed && <span>{item.name}</span>}
-                  {!collapsed && item.badge && (
-                    <span className="ml-auto bg-white text-black text-xs px-1.5 py-0.5 rounded-full">
-                      {item.badge}
-                    </span>
-                  )}
-                </a>
+              <Link 
+                href={item.path}
+                className={`flex items-center px-4 py-2 rounded-lg transition-all ${
+                  location === item.path
+                    ? "bg-gray-800 text-white"
+                    : "text-gray-300 hover:bg-gray-800 hover:text-white"
+                }`}
+              >
+                <span className="mr-3">{item.icon}</span>
+                {!collapsed && <span>{item.name}</span>}
+                {!collapsed && item.badge && (
+                  <span className="ml-auto bg-white text-black text-xs px-1.5 py-0.5 rounded-full">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             </li>
           ))}
@@ -102,15 +101,15 @@ export default function Sidebar() {
 
       {/* Settings and logout */}
       <div className="p-4 border-t border-gray-700">
-        <Link href="/settings">
-          <a className={`flex items-center mb-4 px-4 py-2 rounded-lg ${
+        <Link 
+          href="/settings"
+          className={`flex items-center mb-4 px-4 py-2 rounded-lg ${
             location === "/settings" 
               ? "bg-gray-800 text-white"
               : "text-gray-300 hover:bg-gray-800 hover:text-white"
           }`}>
             <Settings className="h-5 w-5 mr-3" />
             {!collapsed && <span>Settings</span>}
-          </a>
         </Link>
         <Button 
           variant="ghost" 
