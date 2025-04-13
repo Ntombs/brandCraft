@@ -9,15 +9,5 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background: linear-gradient(45deg, #ffffff 25%, #f3f3f3 25%, #f3f3f3 50%, #ffffff 50%, #ffffff 75%, #f3f3f3 75%, #f3f3f3);
-    background-size: 40px 40px;
-  }
-
-  h1, h2, h3 {
-    @apply font-mono tracking-tight;
-  }
-
-  .card {
-    @apply backdrop-blur-sm bg-white/80;
   }
 }

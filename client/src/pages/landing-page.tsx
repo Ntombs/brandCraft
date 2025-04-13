@@ -24,7 +24,7 @@ export default function LandingPage() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-mono font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+            <h1 className="text-4xl md:text-5xl font-playfair font-bold leading-tight mb-6">
               Strategic Brand Construction &<br />Graphic Design for the South African Market
             </h1>
             <p className="text-gray-700 mb-8 text-lg">

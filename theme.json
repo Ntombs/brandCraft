@@ -1,7 +1,6 @@
-
 {
-  "variant": "artistic",
-  "primary": "hsl(340 82% 52%)",
+  "variant": "professional",
+  "primary": "hsl(0 0% 0%)",
   "appearance": "light",
-  "radius": 0
+  "radius": 0.5
 }
