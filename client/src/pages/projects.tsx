@@ -2,6 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import MainLayout from "@/components/layout/main-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Project } from "@shared/schema";
 import { Link } from "wouter";
@@ -304,10 +305,22 @@ export default function Projects() {
                         onValueChange={(value) => setNewProject(prev => ({ ...prev, timelineFlexibility: value }))}
                       >
                         <div className="grid grid-cols-2 gap-2">
-                          <RadioGroupItem value="fixed" label="Fixed Deadline" />
-                          <RadioGroupItem value="flexible" label="Target Date - Flexible" />
-                          <RadioGroupItem value="ongoing" label="Open/Ongoing" />
-                          <RadioGroupItem value="urgent" label="Urgent" />
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="fixed" id="fixed" />
+                            <label htmlFor="fixed">Fixed Deadline</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="flexible" id="flexible" />
+                            <label htmlFor="flexible">Target Date - Flexible</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="ongoing" id="ongoing" />
+                            <label htmlFor="ongoing">Open/Ongoing</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="urgent" id="urgent" />
+                            <label htmlFor="urgent">Urgent</label>
+                          </div>
                         </div>
                       </RadioGroup>
                     </div>
@@ -319,12 +332,30 @@ export default function Projects() {
                         onValueChange={(value) => setNewProject(prev => ({ ...prev, budgetRange: value }))}
                       >
                         <div className="grid grid-cols-2 gap-2">
-                          <RadioGroupItem value="under_1000" label="< $1,000" />
-                          <RadioGroupItem value="1000_2500" label="$1,000 - $2,500" />
-                          <RadioGroupItem value="2500_5000" label="$2,500 - $5,000" />
-                          <RadioGroupItem value="5000_10000" label="$5,000 - $10,000" />
-                          <RadioGroupItem value="over_10000" label="> $10,000" />
-                          <RadioGroupItem value="tbd" label="To Be Discussed" />
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="under_1000" id="under_1000" />
+                            <label htmlFor="under_1000">< R1,000</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="1000_2500" id="1000_2500" />
+                            <label htmlFor="1000_2500">R1,000 - R2,500</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="2500_5000" id="2500_5000" />
+                            <label htmlFor="2500_5000">R2,500 - R5,000</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="5000_10000" id="5000_10000" />
+                            <label htmlFor="5000_10000">R5,000 - R10,000</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="over_10000" id="over_10000" />
+                            <label htmlFor="over_10000">> R10,000</label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="tbd" id="tbd" />
+                            <label htmlFor="tbd">To Be Discussed</label>
+                          </div>
                         </div>
                       </RadioGroup>
                     </div>
