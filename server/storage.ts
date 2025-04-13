@@ -239,6 +239,7 @@ export class MemStorage implements IStorage {
     const now = new Date();
     
     // Set default values for all required fields
+    const businessInfo = insertData.businessInfo || {};
     const brandIdentity = insertData.brandIdentity || {};
     const targetAudience = insertData.targetAudience || {};
     const visualStyle = insertData.visualStyle || {};
@@ -249,6 +250,7 @@ export class MemStorage implements IStorage {
     const data: OnboardingData = {
       ...insertData,
       id,
+      businessInfo,
       brandIdentity,
       targetAudience,
       visualStyle,

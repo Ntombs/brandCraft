@@ -44,7 +44,7 @@ export default function AuthPage() {
   // If user is already logged in, redirect to dashboard
   useEffect(() => {
     if (user) {
-      setLocation("/");
+      setLocation("/dashboard");
     }
   }, [user, setLocation]);
 
@@ -87,8 +87,8 @@ export default function AuthPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center lg:text-left">
-            <h1 className="text-3xl font-playfair font-bold mb-2">Studio Platform</h1>
-            <p className="text-gray-600">Your creative journey begins here.</p>
+            <h1 className="text-3xl font-playfair font-bold mb-2">Nompo Evelyn</h1>
+            <p className="text-gray-600">Your brand strategy journey begins here.</p>
           </div>
 
           <Tabs defaultValue="login" value={activeTab} onValueChange={(value) => setActiveTab(value as "login" | "register")}>

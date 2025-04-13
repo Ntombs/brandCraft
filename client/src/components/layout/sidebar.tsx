@@ -29,7 +29,7 @@ export default function Sidebar() {
   if (!user) return null;
 
   const navItems: NavItem[] = [
-    { name: "Dashboard", path: "/", icon: <LayoutDashboard className="h-5 w-5" /> },
+    { name: "Dashboard", path: "/dashboard", icon: <LayoutDashboard className="h-5 w-5" /> },
     { name: "Projects", path: "/projects", icon: <FolderOpen className="h-5 w-5" /> },
     { name: "Brand Library", path: "/brand-library", icon: <Palette className="h-5 w-5" /> },
     { name: "Messages", path: "/messages", icon: <MessageSquare className="h-5 w-5" />, badge: 3 },
@@ -58,8 +58,8 @@ export default function Sidebar() {
 
       {/* Logo */}
       <div className="flex items-center justify-center md:justify-start h-16 px-4">
-        <span className={`${collapsed ? "block" : "hidden md:hidden"} text-xl font-bold`}>S</span>
-        <h1 className={`${collapsed ? "hidden" : "hidden md:block"} font-playfair text-xl font-bold`}>Studio Platform</h1>
+        <span className={`${collapsed ? "block" : "hidden md:hidden"} text-xl font-bold`}>NE</span>
+        <h1 className={`${collapsed ? "hidden" : "hidden md:block"} font-playfair text-xl font-bold`}>Nompo Evelyn</h1>
       </div>
 
       {/* User info */}

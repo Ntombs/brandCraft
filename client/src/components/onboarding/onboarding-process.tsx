@@ -139,7 +139,7 @@ export default function OnboardingProcess() {
             description: "Your brand discovery process is complete!",
           });
           // Redirect to dashboard
-          setLocation("/");
+          setLocation("/dashboard");
         }
       });
     }
