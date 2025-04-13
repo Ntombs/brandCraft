@@ -11,6 +11,8 @@ import BrandLibrary from "@/pages/brand-library";
 import Messages from "@/pages/messages";
 import OurStory from "@/pages/our-story";
 import Settings from "@/pages/settings";
+import Onboarding from "@/pages/onboarding";
+import ProjectDetail from "@/pages/project-detail";
 import { ProtectedRoute } from "./lib/protected-route";
 
 function Router() {
@@ -19,10 +21,12 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <ProtectedRoute path="/" component={Dashboard} />
       <ProtectedRoute path="/projects" component={Projects} />
+      <ProtectedRoute path="/projects/:id" component={ProjectDetail} />
       <ProtectedRoute path="/brand-library" component={BrandLibrary} />
       <ProtectedRoute path="/messages" component={Messages} />
       <ProtectedRoute path="/our-story" component={OurStory} />
       <ProtectedRoute path="/settings" component={Settings} />
+      <ProtectedRoute path="/onboarding" component={Onboarding} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
