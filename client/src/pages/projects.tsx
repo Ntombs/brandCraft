@@ -336,23 +336,23 @@ export default function Projects() {
                         <div className="grid grid-cols-2 gap-2">
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="under_1000" id="under_1000" />
-                            <label htmlFor="under_1000">Under R1,000</label>
+                            <label htmlFor="under_1000">Under R1 000</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="1000_2500" id="1000_2500" />
-                            <label htmlFor="1000_2500">R1,000 - R2,500</label>
+                            <label htmlFor="1000_2500">R1 000 - R2 500</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="2500_5000" id="2500_5000" />
-                            <label htmlFor="2500_5000">R2,500 - R5,000</label>
+                            <label htmlFor="2500_5000">R2 500 - R5 000</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="5000_10000" id="5000_10000" />
-                            <label htmlFor="5000_10000">R5,000 - R10,000</label>
+                            <label htmlFor="5000_10000">R5 000 - R10 000</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="over_10000" id="over_10000" />
-                            <label htmlFor="over_10000">Over R10,000</label>
+                            <label htmlFor="over_10000">Over R10 000</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="tbd" id="tbd" />

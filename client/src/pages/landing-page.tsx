@@ -186,7 +186,7 @@ export default function LandingPage() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-600">
               <li>hello@nompoevelyn.com</li>
-              <li>+27 (0) 11 123 4567</li>
+              <li>011 123 4567</li>
               <li>123 Design Street, Sandton, 2196, Johannesburg</li>
             </ul>
           </div>
