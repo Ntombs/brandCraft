@@ -334,7 +334,7 @@ export default function Projects() {
                         <div className="grid grid-cols-2 gap-2">
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="under_1000" id="under_1000" />
-                            <label htmlFor="under_1000">< R1,000</label>
+                            <label htmlFor="under_1000">Under R1,000</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="1000_2500" id="1000_2500" />
@@ -350,7 +350,7 @@ export default function Projects() {
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="over_10000" id="over_10000" />
-                            <label htmlFor="over_10000">> R10,000</label>
+                            <label htmlFor="over_10000">Over R10,000</label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="tbd" id="tbd" />

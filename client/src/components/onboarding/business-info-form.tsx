@@ -18,6 +18,7 @@ export default function BusinessInfoForm({ data, updateFormData }: BusinessInfoF
     foundedYear: data?.foundedYear || "",
     businessDescription: data?.businessDescription || "",
     employeeCount: data?.employeeCount || "",
+    bbbeeLevel: data?.bbbeeLevel || "",
   });
 
   useEffect(() => {
