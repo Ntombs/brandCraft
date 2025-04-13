@@ -2,6 +2,15 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+
+// South African business registration types
+const registrationTypes = [
+  { id: "pty-ltd", label: "(Pty) Ltd - Private Company" },
+  { id: "cc", label: "CC - Close Corporation" },
+  { id: "sole-prop", label: "Sole Proprietorship" },
+  { id: "inc", label: "Inc. - Personal Liability Company" },
+  { id: "npc", label: "NPC - Non-Profit Company" }
+];
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 

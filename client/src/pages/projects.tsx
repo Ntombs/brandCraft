@@ -33,12 +33,14 @@ const serviceOfferings = {
     { id: "custom_design", label: "Custom Design Projects" }
   ],
   business: [
-    { id: "company_registration", label: "Company Registration (CIPC)" },
-    { id: "tax_number", label: "Tax Number & Clearance" },
-    { id: "sars_update", label: "SARS Representative Update" },
-    { id: "coida", label: "COIDA Registration & Letter of Good Standing" },
-    { id: "business_plan", label: "Business Plan" },
-    { id: "business_profile", label: "Business Profile" }
+    { id: "company_registration", label: "CIPC Company Registration" },
+    { id: "tax_registration", label: "SARS Tax Registration & VAT Number" },
+    { id: "bee_certification", label: "B-BBEE Certification" },
+    { id: "coida_registration", label: "COIDA Registration & Letter of Good Standing" },
+    { id: "business_plan", label: "Business Plan (South African Market Focus)" },
+    { id: "business_profile", label: "Business Profile with BEE Status" },
+    { id: "uif_registration", label: "UIF Registration" },
+    { id: "workman_comp", label: "Workman's Compensation Registration" }
   ]
 };
 
