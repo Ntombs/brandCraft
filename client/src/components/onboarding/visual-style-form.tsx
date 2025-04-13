@@ -50,7 +50,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
     <Card className="border border-gray-200 shadow-sm mb-8">
       <CardContent className="p-8">
         <h2 className="font-playfair text-2xl font-semibold mb-6">Brand Aesthetics and Visual Style</h2>
-        
+
         <form className="space-y-8">
           <div className="space-y-6">
             <div>
@@ -106,7 +106,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                 </div>
               </RadioGroup>
             </div>
-            
+
             <div>
               <Label className="block text-sm font-medium mb-2">
                 What colors best reflect your brand's identity?
@@ -114,7 +114,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
               <p className="text-sm text-gray-500 mb-4">
                 Select a color theme or describe your preferred palette
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
                 {colorSwatches.map((swatch) => (
                   <div 
@@ -146,7 +146,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                   </div>
                 ))}
               </div>
-              
+
               <div>
                 <Label htmlFor="custom_colors" className="block text-sm font-medium mb-2">
                   Describe your color preferences (optional)
@@ -167,7 +167,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                 />
               </div>
             </div>
-            
+
             <div>
               <Label htmlFor="designElements" className="block text-sm font-medium mb-2">
                 Are there any design elements or symbols that you'd like to incorporate into your branding?
@@ -181,7 +181,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                 className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
               />
             </div>
-            
+
             <div>
               <Label htmlFor="designExamples" className="block text-sm font-medium mb-2">
                 Do you have any visual or design elements from competitors or other brands that you like or dislike?
@@ -197,7 +197,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
             </div>
           </div>
         </form>
-        
+
         {/* Explanation Section */}
         <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 mt-10">
           <h3 className="font-playfair text-lg font-semibold mb-2">Why We Need This Information</h3>
