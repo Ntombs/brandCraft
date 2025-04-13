@@ -1,0 +1,89 @@
+MUST include clear representations for ALL of the following elements, logically grouped:
+
+* **Section Title:** (e.g., "Tell Us About Your New Project")
+* **A. Project Contact Information Grouping:**
+    * **Contact Person Name:**
+        * Label: "Primary Project Contact Name"
+        * Input Type: Text Input
+        * Required: Yes
+        * Note: May pre-fill with logged-in user's name but must be editable.
+    * **Contact Person Email:**
+        * Label: "Project Contact Email"
+        * Input Type: Email Input
+        * Required: Yes
+        * Note: Needs standard email format validation indication. May pre-fill but must be editable.
+    * **Contact Person Phone:**
+        * Label: "Project Contact Phone (Optional)"
+        * Input Type: Phone Input (or Text Input)
+        * Required: No
+    * **Contact Person Role/Title:**
+        * Label: "Contact's Role/Title (Optional)"
+        * Input Type: Text Input
+        * Required: No
+
+* **B. Project Details Grouping:**
+    * **Project Name/Title:**
+        * Label: "Project Name or Title"
+        * Input Type: Text Input
+        * Required: Yes
+        * Helper Text: (e.g., "Give your project a short, descriptive name.")
+    * **Brief Project Description / Key Goal(s):**
+        * Label: "Brief Project Description / Key Goal(s)"
+        * Input Type: Text Area (allow multiple lines, reasonable height)
+        * Required: Yes
+        * Helper Text: (e.g., "Briefly describe what you want to achieve with this project.")
+    * **Current Website URL (if applicable):**
+        * Label: "Current Website URL (Optional)"
+        * Input Type: URL Input (or Text Input)
+        * Required: No
+    * **Desired Start Date (Approximate):**
+        * Label: "Desired Project Start Date (Approximate)"
+        * Input Type: Date Picker (or Text Input with clear format hint e.g., YYYY-MM-DD)
+        * Required: No
+    * **Desired Completion Date / Deadline (Approximate):**
+        * Label: "Desired Completion Date / Deadline (Approximate)"
+        * Input Type: Date Picker (or Text Input)
+        * Required: No
+    * **Timeline Flexibility (Optional):**
+        * Label: "Timeline Flexibility (Optional)"
+        * Input Type: Dropdown or Radio Button Group
+        * Required: No
+        * Options: (e.g., "Fixed Deadline", "Target Date - Flexible", "Open/Ongoing", "Urgent")
+    * **Estimated Budget Range (Optional):**
+        * Label: "Estimated Budget Range (Optional)"
+        * Input Type: Dropdown or Radio Button Group
+        * Required: No
+        * **Options:** `[USER MUST PROVIDE LIST OF BUDGET RANGES - e.g., "< $1,000", "$1,000 - $2,500", "$2,500 - $5,000", "$5,000 - $10,000", "> $10,000", "To Be Discussed"]`
+        * Helper Text: (e.g., "Select the range that best fits your project budget.")
+
+* **C. Required Services Grouping:**
+    * **Services List:**
+        * Label: "Which service(s) are you interested in?"
+        * Input Type: Checkbox Group or Multi-select List (allowing selection of multiple services)
+        * Required: Yes (at least one selection)
+        * **Options:** `[USER MUST PROVIDE THE LIST OF SERVICES OFFERED BY THE AGENCY - e.g., Logo Design, Full Brand Identity, Website Design, Brand Strategy Workshop, Compliance Audit, Social Media Graphics Package, etc.]`
+    * **Other/Unsure Service:**
+        * Label: "Other / Unsure / More Details"
+        * Input Type: Text Area (initially small, potentially expandable)
+        * Required: No
+        * Helper Text: (e.g., "If your need isn't listed or you're unsure, please describe it here.")
+
+* **D. Supporting Files Grouping (Optional):**
+    * **File Upload:**
+        * Label: "Upload Relevant Files (Optional)"
+        * Input Type: File Upload Input (allowing multiple files if appropriate)
+        * Required: No
+        * Helper Text: (e.g., "Attach existing briefs, brand guides, logos, or other relevant documents.")
+        * **Constraints Note:** `[USER MUST SPECIFY acceptable file types (e.g., PDF, DOCX, JPG, PNG, AI, PSD) and max file size limit (e.g., 10MB per file)]`
+        * Note: Design must show how selected/uploaded files are displayed (e.g., list with file names/size, remove option, progress indicator during upload).
+
+* **E. Submission Area:**
+    * **Submit Button:**
+        * Label: "Submit Project Request" or "Send Request"
+        * Type: Primary Call-to-Action Button (must stand out using B&W contrast techniques).
+        * State: Must clearly show disabled state until all required fields are valid.
+    * **Optional Note:** (e.g., "We'll review your request and get back to you within 1-2 business days.")
+7. User Experience Considerations:
+
+Clarity & Simplicity: Despite added fields, maintain a straightforward feel. Use clear language and logical grouping. Mark optional fields clearly.
+Logical Flow: Ensure groupings make sense to the client.
