@@ -8,6 +8,7 @@ import { Loader2 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { OnboardingData } from "@shared/schema";
+import BusinessInfoForm from "./business-info-form";
 import BrandIdentityForm from "./brand-identity-form";
 import TargetAudienceForm from "./target-audience-form";
 import VisualStyleForm from "./visual-style-form";
@@ -27,16 +28,18 @@ export default function OnboardingProcess() {
   const { toast } = useToast();
   
   const [steps, setSteps] = useState<OnboardingStep[]>([
-    { id: 1, name: "Brand Identity", completed: false, active: true },
-    { id: 2, name: "Target Audience", completed: false, active: false },
-    { id: 3, name: "Visual Style", completed: false, active: false },
+    { id: 1, name: "Business Info", completed: false, active: true },
+    { id: 2, name: "Brand Identity", completed: false, active: false },
+    { id: 3, name: "Target Audience", completed: false, active: false },
     { id: 4, name: "Brand Voice", completed: false, active: false },
-    { id: 5, name: "Project Goals", completed: false, active: false },
+    { id: 5, name: "Visual Style", completed: false, active: false },
+    { id: 6, name: "Project Goals", completed: false, active: false },
   ]);
   
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<Partial<OnboardingData>>({
     clientId: user?.id,
+    businessInfo: {},
     brandIdentity: {},
     targetAudience: {},
     visualStyle: {},
@@ -174,19 +177,19 @@ export default function OnboardingProcess() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Header with progress */}
       <div className="mb-10">
-        <h1 className="font-playfair text-3xl font-bold mb-6">Brand Discovery Process</h1>
+        <h1 className="font-playfair text-3xl font-bold mb-6">Brand Discovery Journey</h1>
         <p className="text-gray-600 max-w-3xl mb-8">
-          This comprehensive questionnaire will help us understand your brand needs and create a tailored strategy. 
+          Welcome to Nompo Evelyn's brand discovery process. This comprehensive questionnaire will help us understand your business and create a tailored brand strategy. 
           Each section builds upon the previous to form a complete picture of your vision.
         </p>
         
         {/* Progress Bar */}
-        <div className="w-full max-w-3xl mb-4">
+        <div className="w-full max-w-5xl mb-4">
           <Progress value={progressPercentage} className="h-1 bg-gray-200" />
         </div>
-        <div className="flex mb-8 max-w-3xl justify-between">
+        <div className="flex flex-wrap mb-8 max-w-5xl justify-between">
           {steps.map((step) => (
-            <div key={step.id} className="flex flex-col items-center">
+            <div key={step.id} className="flex flex-col items-center mb-2 mx-1">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center mb-2 ${
                   step.completed
@@ -222,23 +225,23 @@ export default function OnboardingProcess() {
         
         {/* Form Content */}
         {currentStep === 1 && (
+          <BusinessInfoForm 
+            data={formData.businessInfo} 
+            updateFormData={(data) => updateFormData("businessInfo", data)}
+          />
+        )}
+        
+        {currentStep === 2 && (
           <BrandIdentityForm 
             data={formData.brandIdentity} 
             updateFormData={(data) => updateFormData("brandIdentity", data)}
           />
         )}
         
-        {currentStep === 2 && (
+        {currentStep === 3 && (
           <TargetAudienceForm 
             data={formData.targetAudience} 
             updateFormData={(data) => updateFormData("targetAudience", data)}
-          />
-        )}
-        
-        {currentStep === 3 && (
-          <VisualStyleForm 
-            data={formData.visualStyle} 
-            updateFormData={(data) => updateFormData("visualStyle", data)}
           />
         )}
         
@@ -250,6 +253,13 @@ export default function OnboardingProcess() {
         )}
         
         {currentStep === 5 && (
+          <VisualStyleForm 
+            data={formData.visualStyle} 
+            updateFormData={(data) => updateFormData("visualStyle", data)}
+          />
+        )}
+        
+        {currentStep === 6 && (
           <ProjectGoalsForm 
             data={formData.projectGoals} 
             updateFormData={(data) => updateFormData("projectGoals", data)}

@@ -115,14 +115,17 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                 Select a color theme or describe your preferred palette
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+              <RadioGroup 
+                value={formValues.colorPalette}
+                onValueChange={(value) => handleRadioChange("colorPalette", value)}
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4"
+              >
                 {colorSwatches.map((swatch) => (
                   <div 
                     key={swatch.name}
                     className={`border rounded-md p-3 cursor-pointer hover:border-black transition-colors ${
                       formValues.colorPalette === swatch.name ? 'border-black' : 'border-gray-200'
                     }`}
-                    onClick={() => handleRadioChange("colorPalette", swatch.name)}
                   >
                     <div className="flex mb-3">
                       {swatch.colors.map((color) => (
@@ -137,7 +140,6 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                       <RadioGroupItem 
                         value={swatch.name} 
                         id={`color_${swatch.name}`} 
-                        checked={formValues.colorPalette === swatch.name}
                       />
                       <Label htmlFor={`color_${swatch.name}`} className="ml-2">
                         {swatch.name}
@@ -145,7 +147,7 @@ export default function VisualStyleForm({ data, updateFormData }: VisualStyleFor
                     </div>
                   </div>
                 ))}
-              </div>
+              </RadioGroup>
 
               <div>
                 <Label htmlFor="custom_colors" className="block text-sm font-medium mb-2">

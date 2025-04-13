@@ -84,6 +84,7 @@ export const insertMessageSchema = createInsertSchema(messages).pick({
 export const onboardingData = pgTable("onboarding_data", {
   id: serial("id").primaryKey(),
   clientId: integer("client_id").notNull(),
+  businessInfo: jsonb("business_info"),
   brandIdentity: jsonb("brand_identity"),
   targetAudience: jsonb("target_audience"),
   visualStyle: jsonb("visual_style"),
@@ -96,6 +97,7 @@ export const onboardingData = pgTable("onboarding_data", {
 
 export const insertOnboardingDataSchema = createInsertSchema(onboardingData).pick({
   clientId: true,
+  businessInfo: true,
   brandIdentity: true,
   targetAudience: true,
   visualStyle: true,
