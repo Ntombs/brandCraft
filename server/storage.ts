@@ -39,7 +39,7 @@ export interface IStorage {
   updateOnboardingData(clientId: number, data: Partial<OnboardingData>): Promise<OnboardingData | undefined>;
   
   // Session store
-  sessionStore: session.SessionStore;
+  sessionStore: any; // Using any type to avoid SessionStore type issues
 }
 
 export class MemStorage implements IStorage {
@@ -48,7 +48,7 @@ export class MemStorage implements IStorage {
   private projectFiles: Map<number, ProjectFile>;
   private messages: Map<number, Message>;
   private onboardingData: Map<number, OnboardingData>;
-  sessionStore: session.SessionStore;
+  sessionStore: any; // Using any to avoid TypeScript issues with session store
   
   private userIdCounter: number;
   private projectIdCounter: number;
@@ -103,7 +103,14 @@ export class MemStorage implements IStorage {
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.userIdCounter++;
     const role = (insertUser as any).role || "client";
-    const user: User = { ...insertUser, id, role };
+    // Ensure companyName is not undefined
+    const companyName = insertUser.companyName || null;
+    const user: User = { 
+      ...insertUser, 
+      id, 
+      role, 
+      companyName
+    };
     this.users.set(id, user);
     return user;
   }
@@ -122,9 +129,18 @@ export class MemStorage implements IStorage {
   async createProject(insertProject: InsertProject): Promise<Project> {
     const id = this.projectIdCounter++;
     const now = new Date();
+    
+    // Ensure required fields have default values
+    const status = insertProject.status || "pending";
+    const description = insertProject.description || null;
+    const scope = insertProject.scope || {};
+    
     const project: Project = {
       ...insertProject,
       id,
+      status,
+      description,
+      scope,
       createdAt: now,
       updatedAt: now
     };
@@ -160,9 +176,14 @@ export class MemStorage implements IStorage {
   async createProjectFile(insertFile: InsertProjectFile): Promise<ProjectFile> {
     const id = this.fileIdCounter++;
     const now = new Date();
+    
+    // Set default value for isDeliverable
+    const isDeliverable = insertFile.isDeliverable ?? null;
+    
     const file: ProjectFile = {
       ...insertFile,
       id,
+      isDeliverable,
       uploadedAt: now
     };
     this.projectFiles.set(id, file);
@@ -216,9 +237,24 @@ export class MemStorage implements IStorage {
   async createOnboardingData(insertData: InsertOnboardingData): Promise<OnboardingData> {
     const id = this.onboardingIdCounter++;
     const now = new Date();
+    
+    // Set default values for all required fields
+    const brandIdentity = insertData.brandIdentity || {};
+    const targetAudience = insertData.targetAudience || {};
+    const visualStyle = insertData.visualStyle || {};
+    const brandVoice = insertData.brandVoice || {};
+    const projectGoals = insertData.projectGoals || {};
+    const completedSteps = insertData.completedSteps || 0;
+    
     const data: OnboardingData = {
       ...insertData,
       id,
+      brandIdentity,
+      targetAudience,
+      visualStyle,
+      brandVoice,
+      projectGoals,
+      completedSteps,
       createdAt: now,
       updatedAt: now
     };

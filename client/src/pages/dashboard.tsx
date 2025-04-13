@@ -25,10 +25,10 @@ export default function Dashboard() {
             <p className="text-gray-600">Here's an overview of your brand journey with us.</p>
           </div>
           <div className="mt-4 md:mt-0">
-            <Link href="/projects">
-              <a className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
+            <Link 
+              href="/projects"
+              className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
                 View All Projects
-              </a>
             </Link>
           </div>
         </div>
@@ -91,38 +91,40 @@ export default function Dashboard() {
             ) : projects && projects.length > 0 ? (
               <div className="divide-y">
                 {projects.slice(0, 3).map((project) => (
-                  <Link key={project.id} href={`/projects/${project.id}`}>
-                    <a className="block py-4 px-2 hover:bg-gray-50 rounded-md transition-colors">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <h3 className="font-medium">{project.title}</h3>
-                          <p className="text-sm text-gray-500">
-                            {new Date(project.createdAt).toLocaleDateString()}
-                          </p>
-                        </div>
-                        <div>
-                          <span className={`px-2 py-1 text-xs rounded-full ${
-                            project.status === "completed" 
-                              ? "bg-green-100 text-green-800" 
-                              : project.status === "in_progress" 
-                              ? "bg-blue-100 text-blue-800" 
-                              : "bg-gray-100 text-gray-800"
-                          }`}>
-                            {project.status.replace("_", " ")}
-                          </span>
-                        </div>
+                  <Link 
+                    key={project.id} 
+                    href={`/projects/${project.id}`}
+                    className="block py-4 px-2 hover:bg-gray-50 rounded-md transition-colors"
+                  >
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <h3 className="font-medium">{project.title}</h3>
+                        <p className="text-sm text-gray-500">
+                          {new Date(project.createdAt).toLocaleDateString()}
+                        </p>
                       </div>
-                    </a>
+                      <div>
+                        <span className={`px-2 py-1 text-xs rounded-full ${
+                          project.status === "completed" 
+                            ? "bg-green-100 text-green-800" 
+                            : project.status === "in_progress" 
+                            ? "bg-blue-100 text-blue-800" 
+                            : "bg-gray-100 text-gray-800"
+                        }`}>
+                          {project.status.replace("_", " ")}
+                        </span>
+                      </div>
+                    </div>
                   </Link>
                 ))}
               </div>
             ) : (
               <div className="text-center py-8">
                 <p className="text-gray-500 mb-4">No projects yet</p>
-                <Link href="/onboarding">
-                  <a className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
-                    Start Onboarding
-                  </a>
+                <Link 
+                  href="/onboarding"
+                  className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
+                  Start Onboarding
                 </Link>
               </div>
             )}
