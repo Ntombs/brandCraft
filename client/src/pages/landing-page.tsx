@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ImageIcon } from "lucide-react";
-import { useState } from "react";
 
 export default function LandingPage() {
-  
   return (
     <div className="flex flex-col min-h-screen bg-[#f8f5f0] text-[#2c2c2c]">
       {/* Header */}
@@ -46,14 +44,9 @@ export default function LandingPage() {
               </Link>
             </div>
           </div>
-          <ImageUpload
-            title="Hero Image"
-            subtitle="Add your image here (1200×900px recommended)"
-            aspectRatio="4/3"
-            className="overflow-hidden"
-            initialOpacity={90}
-            onImageUploaded={(url) => setHeroImageUrl(url)}
-          />
+          <div className="bg-white rounded-lg shadow-md aspect-[4/3] flex items-center justify-center">
+            <ImageIcon className="w-16 h-16 text-gray-300" />
+          </div>
         </div>
       </section>
 
@@ -139,14 +132,9 @@ export default function LandingPage() {
       {/* About Section */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <ImageUpload
-            title="About Image"
-            subtitle="Add your team image here (1200×900px recommended)"
-            aspectRatio="4/3"
-            className="overflow-hidden"
-            initialOpacity={75}
-            onImageUploaded={(url) => setAboutImageUrl(url)}
-          />
+          <div className="bg-white rounded-lg shadow-md aspect-[4/3] flex items-center justify-center">
+            <ImageIcon className="w-16 h-16 text-gray-300" />
+          </div>
           <div>
             <h2 className="text-3xl font-playfair font-bold mb-6">About Nompo Evelyn</h2>
             <p className="text-gray-700 mb-4">
