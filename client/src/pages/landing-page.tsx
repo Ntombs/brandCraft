@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ImageIcon, Upload } from "lucide-react";
+import { ImageUpload } from "@/components/ui/image-upload";
+import { useState } from "react";
 
 export default function LandingPage() {
+  const [heroImageUrl, setHeroImageUrl] = useState<string | null>(null);
+  const [aboutImageUrl, setAboutImageUrl] = useState<string | null>(null);
+  
   return (
     <div className="flex flex-col min-h-screen bg-[#f8f5f0] text-[#2c2c2c]">
       {/* Header */}
@@ -44,16 +49,14 @@ export default function LandingPage() {
               </Link>
             </div>
           </div>
-          <div className="relative bg-white rounded-md shadow-sm overflow-hidden">
-            <div className="aspect-[4/3] flex items-center justify-center bg-gray-100">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#a98a55]/10 to-transparent pointer-events-none"></div>
-              <div className="w-full h-full flex items-center justify-center flex-col">
-                <Upload className="w-10 h-10 text-[#a98a55] mb-4 opacity-60" />
-                <p className="text-gray-400 font-medium">Hero Image Upload</p>
-                <p className="text-xs text-gray-400">Add your image here (1200×900px recommended)</p>
-              </div>
-            </div>
-          </div>
+          <ImageUpload
+            title="Hero Image"
+            subtitle="Add your image here (1200×900px recommended)"
+            aspectRatio="4/3"
+            className="overflow-hidden"
+            initialOpacity={90}
+            onImageUploaded={(url) => setHeroImageUrl(url)}
+          />
         </div>
       </section>
 
@@ -139,16 +142,14 @@ export default function LandingPage() {
       {/* About Section */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative bg-[#f8f5f0] rounded-md shadow-sm overflow-hidden">
-            <div className="aspect-[4/3] flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#a98a55]/10 pointer-events-none"></div>
-              <div className="w-full h-full flex items-center justify-center flex-col">
-                <Upload className="w-10 h-10 text-[#a98a55] mb-4 opacity-60" />
-                <p className="text-gray-400 font-medium">About Image Upload</p>
-                <p className="text-xs text-gray-400">Add your team image here (1200×900px recommended)</p>
-              </div>
-            </div>
-          </div>
+          <ImageUpload
+            title="About Image"
+            subtitle="Add your team image here (1200×900px recommended)"
+            aspectRatio="4/3"
+            className="overflow-hidden"
+            initialOpacity={75}
+            onImageUploaded={(url) => setAboutImageUrl(url)}
+          />
           <div>
             <h2 className="text-3xl font-playfair font-bold mb-6">About Nompo Evelyn</h2>
             <p className="text-gray-700 mb-4">
