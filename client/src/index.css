@@ -6,16 +6,19 @@
 @layer base {
   :root {
     /* Base colors from design specification */
-    --background: 39 30% 96%; /* #f8f5f0 */
-    --foreground: 0 0% 17%; /* #2c2c2c */
-    --primary: 35 32% 50%; /* #a98a55 */
-    --primary-hover: 35 32% 45%;
+    --background: 43 38% 97%; 
+    --foreground: 0 0% 17%; 
+    --primary: 35 32% 50%; 
+    --primary-foreground: 0 0% 100%;
     --muted: 35 10% 84%;
     --muted-foreground: 0 0% 45%;
-    --border: 39 15% 85%;
+    --border: 35 10% 84%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 17%;
-    
+    --input: 35 10% 84%;
+    --ring: 35 32% 50%;
+    --radius: 0.25rem;
+
     /* Spacing variables */
     --content-padding: 2rem;
     --section-spacing: 4rem;
@@ -69,11 +72,11 @@
   .btn-text {
     @apply text-[#2c2c2c] hover:text-[#a98a55] relative transition-all duration-300;
   }
-  
+
   .btn-text::after {
     @apply content-[''] absolute bottom-0 left-0 w-0 h-[1px] bg-[#a98a55] transition-all duration-300;
   }
-  
+
   .btn-text:hover::after {
     @apply w-full;
   }
@@ -82,7 +85,7 @@
   .card {
     @apply bg-white shadow-sm border border-[#e5e0d8] rounded-md p-6 transition-all duration-300;
   }
-  
+
   .card-hover {
     @apply hover:shadow-md hover:border-[#a98a55]/20;
   }
@@ -105,11 +108,11 @@
   .nav-link {
     @apply text-[#2c2c2c] hover:text-[#a98a55] transition-colors duration-300 relative py-2;
   }
-  
+
   .nav-link.active {
     @apply text-[#a98a55] font-medium;
   }
-  
+
   .nav-link.active::after {
     @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-[#a98a55];
   }
