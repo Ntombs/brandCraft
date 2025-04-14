@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import MainLayout from "@/components/layout/main-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,7 +72,7 @@ export default function Projects() {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     const validFiles = files.filter(file => file.size <= 10 * 1024 * 1024); // 10MB limit
-    
+
     if (validFiles.length !== files.length) {
       toast({
         title: "Warning",
@@ -117,7 +116,7 @@ export default function Projects() {
         services: newProject.services,
         status: "draft",
       });
-      
+
       queryClient.invalidateQueries({ queryKey: ["/api/projects"] });
       setNewProject({
         title: "",
@@ -127,7 +126,7 @@ export default function Projects() {
         services: { marketing: [], design: [], business: [] }
       });
       setIsCreatingProject(false);
-      
+
       toast({
         title: "Success",
         description: "Project created successfully",
