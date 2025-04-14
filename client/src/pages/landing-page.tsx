@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ImageIcon, Upload } from "lucide-react";
-import { ImageUpload } from "@/components/ui/image-upload";
+import { ImageIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function LandingPage() {
-  const [heroImageUrl, setHeroImageUrl] = useState<string | null>(null);
-  const [aboutImageUrl, setAboutImageUrl] = useState<string | null>(null);
   
   return (
     <div className="flex flex-col min-h-screen bg-[#f8f5f0] text-[#2c2c2c]">
