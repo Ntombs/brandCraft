@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 43 38% 97%;
-    --foreground: 0 0% 17%;
-    --primary: 35 32% 50%;
+    /* Base colors from design specification */
+    --background: 39 30% 96%; /* #f8f5f0 */
+    --foreground: 0 0% 17%; /* #2c2c2c */
+    --primary: 35 32% 50%; /* #a98a55 */
+    --primary-hover: 35 32% 45%;
     --muted: 35 10% 84%;
+    --muted-foreground: 0 0% 45%;
+    --border: 39 15% 85%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+    
+    /* Spacing variables */
+    --content-padding: 2rem;
+    --section-spacing: 4rem;
   }
 
   * {
@@ -16,27 +26,91 @@
   }
 
   body {
-    @apply font-sans antialiased bg-[#f8f5f0] text-[#2c2c2c];
+    @apply font-lato antialiased bg-[#f8f5f0] text-[#2c2c2c] leading-relaxed;
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a98a55' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
-  h1, h2, h3 {
-    @apply font-playfair font-semibold tracking-tight;
+  /* Typography */
+  h1, h2 {
+    @apply font-playfair font-semibold tracking-tight text-[#2c2c2c] leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply font-playfair font-medium text-2xl md:text-3xl;
   }
 
   h4, h5, h6 {
     @apply font-montserrat font-medium;
   }
 
+  p {
+    @apply mb-4 text-base leading-relaxed;
+  }
+
+  /* Buttons */
   .btn-primary {
-    @apply bg-[#a98a55] text-white hover:bg-[#8d7346] transition-colors;
+    @apply bg-[#a98a55] text-white hover:bg-[#8d7346] transition-all duration-300 
+      py-3 px-6 rounded focus:ring-2 focus:ring-[#a98a55] focus:ring-opacity-50;
   }
 
   .btn-secondary {
-    @apply border-2 border-[#a98a55] text-[#2c2c2c] hover:bg-[#a98a55] hover:text-white transition-colors;
+    @apply border-2 border-[#a98a55] text-[#2c2c2c] hover:bg-[#a98a55] hover:text-white 
+      transition-all duration-300 py-3 px-6 rounded;
   }
 
+  .btn-text {
+    @apply text-[#2c2c2c] hover:text-[#a98a55] relative transition-all duration-300;
+  }
+  
+  .btn-text::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-[1px] bg-[#a98a55] transition-all duration-300;
+  }
+  
+  .btn-text:hover::after {
+    @apply w-full;
+  }
+
+  /* Cards */
   .card {
-    @apply bg-white/80 backdrop-blur-sm shadow-sm border border-[#e5e0d8];
+    @apply bg-white shadow-sm border border-[#e5e0d8] rounded-md p-6 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-md hover:border-[#a98a55]/20;
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    @apply bg-white border border-[#e5e0d8] rounded-md px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a98a55] focus:border-transparent
+      transition-all duration-300 text-[#2c2c2c] w-full;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    @apply w-5 h-5 text-[#a98a55] bg-white border-[#e5e0d8] focus:ring-[#a98a55]/25;
+  }
+
+  label {
+    @apply block text-sm font-medium text-[#2c2c2c] mb-1.5;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-[#2c2c2c] hover:text-[#a98a55] transition-colors duration-300 relative py-2;
+  }
+  
+  .nav-link.active {
+    @apply text-[#a98a55] font-medium;
+  }
+  
+  .nav-link.active::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-[#a98a55];
   }
 }
