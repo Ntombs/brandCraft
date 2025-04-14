@@ -74,6 +74,7 @@ export default function ProjectWorkspace({ project }: ProjectWorkspaceProps) {
 
   // File upload successful callback
   const handleFileUploaded = () => {
+    console.log('File upload completed, refreshing files list');
     refetchFiles();
   };
 
