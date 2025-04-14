@@ -3,11 +3,39 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 43 38% 97%;
+    --foreground: 0 0% 17%;
+    --primary: 35 32% 50%;
+    --muted: 35 10% 84%;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-[#f8f5f0] text-[#2c2c2c];
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a98a55' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3 {
+    @apply font-playfair font-semibold tracking-tight;
+  }
+
+  h4, h5, h6 {
+    @apply font-montserrat font-medium;
+  }
+
+  .btn-primary {
+    @apply bg-[#a98a55] text-white hover:bg-[#8d7346] transition-colors;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-[#a98a55] text-[#2c2c2c] hover:bg-[#a98a55] hover:text-white transition-colors;
+  }
+
+  .card {
+    @apply bg-white/80 backdrop-blur-sm shadow-sm border border-[#e5e0d8];
   }
 }
