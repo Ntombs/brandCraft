@@ -1,0 +1,76 @@
+1. Project Goal & Target Audience:
+
+Goal: Design a complete, cohesive, and highly functional web application serving as a premium client portal for a graphic design, brand construction, business strategy, and compliance consultancy. The app must facilitate client onboarding, detailed project scoping (via sophisticated questionnaires), project tracking, secure file delivery, and streamlined client communication.
+Target Audience: Clients of the consultancy – typically business owners, managers, or marketing professionals who appreciate quality, professionalism, efficiency, and a sophisticated user experience.
+2. Design Philosophy & Core Aesthetic (restolepicurieux.com Inspired):
+
+Philosophy: Create an experience that feels elegant, sophisticated, curated, warm, and trustworthy, directly inspired by the aesthetic of https://www.restolepicurieux.com/. The design must seamlessly blend this premium feel with intuitive usability and robust functionality required for a B2B application. It should reflect the consultancy's own commitment to high-quality design and client experience.
+Mood & Tone: Refined, welcoming, calm, focused, professional, high-quality, detail-oriented, secure, and effortlessly functional.
+Color Palette:
+Primary Background: Warm off-white / light beige / cream (similar to #f8f5f0 or equivalent). Creates a soft, elegant base.
+Primary Text: Dark charcoal / near-black (like #2c2c2c). Ensures high readability and sophistication.
+Accent: Muted Gold / Brass (like #a98a55). Used strategically for primary buttons, key highlights, active states, elegant icons, subtle underlines, or section dividers. Use with restraint for maximum impact.
+Secondary Text/Elements: Subtle greys (derived from the primary text color or warm greys) for less important text, borders, disabled states, or subtle background differentiations (e.g., for cards or sidebars).
+Typography:
+Primary Headings (H1, H2): An elegant, sophisticated Serif font (e.g., Playfair Display, Cormorant Garamond, Garamond Premier Pro). Used for major titles and section headings to convey quality and establish hierarchy. Explore weight variations.
+Body Text & UI Elements (Labels, Inputs, Buttons): A clean, highly readable, modern Sans-serif font (e.g., Lato, Montserrat, Open Sans, Source Sans Pro). Provides contrast to serif headings and ensures excellent legibility for functional text.
+Sub-Headings (H3, H4) & Captions: Can use either the Serif (lighter weight) or Sans-serif depending on context and desired hierarchy. Consistency is key within specific components.
+Hierarchy & Scale: Define a clear, harmonious typographic scale with distinct sizes, weights, and line spacing for all text elements. Generous line spacing for readability.
+Layout Principles:
+Generous Spacing: Embrace white space (cream space) to create a feeling of luxury, focus, and calm. Avoid clutter.
+Clear Hierarchy: Guide the user's eye naturally through well-structured layouts.
+Asymmetry & Overlap (Landing Page): Use sophisticated layout techniques like asymmetrical grids or overlapping elements (text over images) carefully on the public landing page for visual interest, similar to the reference site.
+Structured Grids (Portal): Within the client portal, prioritize clear, predictable, grid-based layouts for dashboards, forms, and data displays to enhance usability.
+Alignment: Maintain meticulous alignment for a polished feel.
+Imagery & Iconography:
+Imagery (Landing Page): Use high-quality, professional photography or illustrations with a warm, sophisticated, possibly slightly desaturated or artistic feel relevant to creativity, strategy, business growth, or collaboration.
+Imagery (Portal): Use images sparingly within the portal, primarily for user avatars, project thumbnails (if applicable), or illustrative purposes directly related to content.
+Icons: Utilize a consistent set of elegant, clean icons (line icons preferred, potentially using the gold accent color). Icons must be instantly recognizable for their function, especially within the portal.
+Subtle Textures: Consider very subtle background textures (like fine paper or linen) applied sparingly to enhance the tactile feel, if feasible without impacting performance or clarity.
+Animation & Interaction:
+Subtlety is Key: Employ smooth, subtle animations and transitions (e.g., fades, gentle slides on scroll, subtle parallax on landing page).
+Refined Feedback: Use micro-interactions for hover states (e.g., slight lifts, color shifts, underline reveals) and click feedback to make the interface feel responsive and alive.
+Performance: Animations must be performant and never hinder core usability or perceived speed, especially within the portal's functional areas.
+3. Part 1: Public Landing Page Design (Pre-Login):
+
+Purpose: To effectively communicate the value of the client portal and the consultancy's services, build trust, showcase the brand's sophistication, and drive user sign-up or login.
+Key Sections:
+Hero Section: Compelling headline (Serif font), evocative subheading (Sans-serif), relevant high-quality visual, clear Call-to-Action (CTA) button (e.g., "Sign Up for Portal Access", "Client Login").
+Problem/Solution or Value Proposition: Clearly explain the benefits of using the portal (e.g., streamlined communication, easy project tracking, simplified feedback). Use icons + short text blocks.
+How It Works: Simple, visually guided steps (e.g., 1. Sign Up, 2. Define Project, 3. Collaborate & Approve).
+Features Overview: Highlight key portal features (e.g., Guided Scoping, File Sharing, Project Dashboard).
+Testimonials (Optional): Feature client quotes if available, styled elegantly.
+Final CTA Section: Repeat sign-up/login prompts.
+Footer: Include necessary links (Privacy Policy, Terms, Contact), copyright. Maintain elegance.
+Style: Emphasize the aesthetic inspired by restolepicurieux.com. Use high-quality visuals, sophisticated typography, generous spacing, and potentially asymmetrical layouts to create a premium first impression.
+4. Part 2: Client Portal Design (Post-Login):
+
+Purpose: Provide a secure, intuitive, and efficient workspace for clients to manage their projects and interact with the consultancy. Balance the sophisticated aesthetic with paramount usability.
+Core Navigation: Design a clear and persistent navigation structure (e.g., a fixed sidebar using the dark charcoal or a subtle grey background, with gold accents for active states, and clear icons + text labels). Top bar for user profile/logout.
+Key Screens/Modules (Design Needed):
+Dashboard: Overview page upon login. Use cards or distinct sections to display key info (e.g., Active Projects summary, Recent Activity/Notifications, Quick Links to "Start New Project" or view files). Must be clean and actionable.
+Login / Sign Up: Maintain aesthetic consistency with the landing page but focus on clarity and security.
+Onboarding / User Profile: Clean forms for initial setup and editing user details.
+Project Initiation Form: Design this intake form (as detailed in the previous exhaustive prompt, including fields for contact, project basics, timeline, budget, services, uploads) adhering to the new aesthetic. Must be highly usable.
+Detailed Scoping Questionnaire: This multi-step wizard needs meticulous UX design. Break down complex sections (Brand Identity, Tone, Aesthetics etc.). Use progress indicators (non-color based, perhaps steps with gold highlights). Ensure input fields (text, radio, checkbox, lists, etc.) are styled clearly and elegantly. Make saving progress easy.
+Project List / Grid: A page displaying all client projects (past and present). Use cards or a clean table layout with key info (Name, Status, Date) and clear links to project details.
+Project Detail/Overview Page: Hub for a single project. Display submitted scope data clearly, show project status/milestones, provide access to the file delivery section. Structure information logically using headings, definition lists, etc.
+File Delivery/Download Area: Secure, clear list of files (drafts, final deliverables) with names, dates, versions (if applicable), and clear download buttons/links. Style consistently.
+Settings: Standard account settings (password change, notification preferences).
+Style Adaptation: Maintain the color palette, typography, and mood. Prioritize structured, grid-based layouts for clarity. Use Serif headings for page titles/major sections, Sans-serif for all functional text. Ensure extreme readability and usability for all forms, tables, and data displays. Use gold accents purposefully for CTAs, active states, and key highlights. Animations must be minimal and non-intrusive in functional areas.
+5. Specific UI Elements (Detailed Requirements):
+
+Buttons:
+Primary CTAs: Use the muted gold background with dark text, or inverted (cream background, gold text/border). Clear hover/active states (e.g., subtle grow/shrink, color inversion).
+Secondary Buttons: Outlined style (gold border, cream background, dark text) or subtle grey background.
+Text Links: Use the primary dark text color, perhaps with a subtle gold underline on hover/active state.
+Forms:
+Inputs: Clean, rectangular inputs with adequate padding. Subtle border color (light grey), perhaps a slightly darker border or gold highlight on focus. Use Sans-serif font.
+Labels: Clear Sans-serif labels positioned above or aligned with inputs.
+States: Design clear visual cues for disabled, focused, and error states using borders, subtle background changes, and helper text (error messages in dark text).
+Questionnaire UX: Pay extreme attention to the multi-step questionnaire. Ensure steps are clear, progress is visible, navigation between steps is easy, and saving is intuitive.
+Navigation: Ensure clarity in both landing page (top bar) and portal (sidebar/top bar) navigation. Use typography and subtle gold accents for active states.
+Data Display: Design clean tables (subtle borders, alternating row backgrounds if needed using light grey/cream), definition lists, and card layouts for presenting information clearly.
+Modals/Popups: Style consistently for notifications, confirmations, or quick actions. Use the established palette and typography.
+Loading Indicators: Use subtle, elegant loaders (e.g., fading dots, subtle spinners using gold/grey).
+6. Responsiveness & Accessibility:
