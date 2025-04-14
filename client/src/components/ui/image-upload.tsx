@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, ImageIcon, Sliders } from 'lucide-react';
 import Uppy from '@uppy/core';
-import { Dashboard } from '@uppy/react';
+import { Dashboard, DragDrop } from '@uppy/react';
 import ImageEditor from '@uppy/image-editor';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import '@uppy/image-editor/dist/style.css';
+import '@uppy/drag-drop/dist/style.css';
 import { Slider } from "@/components/ui/slider";
 
 interface ImageUploadProps {
